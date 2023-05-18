@@ -6,13 +6,12 @@
  */
 
 import React, {useEffect} from 'react';
-import {
-  SafeAreaView,
-  // ScrollView,
-  // StatusBar,
-  // useColorScheme,
-  // View,
-} from 'react-native';
+import // SafeAreaView,
+// ScrollView,
+// StatusBar,
+// useColorScheme,
+// View,
+'react-native';
 
 // import {
 //   Colors,
@@ -71,30 +70,26 @@ function App(): JSX.Element {
   //   backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   // };
 
-  const backgroundStyle = 'bg-neutral-300 dark:bg-slate-900';
-
   return (
-    <SafeAreaView className={backgroundStyle}>
-      <NavigationContainer>
-        {MENU_LIST.length > 0 ? (
-          <Stack.Navigator>
-            {MENU_LIST.map(menu => {
-              const {name, component, options} = menu;
-              return (
-                <Stack.Screen
-                  key={name}
-                  name={name}
-                  component={component}
-                  options={options}
-                />
-              );
-            })}
-          </Stack.Navigator>
-        ) : (
-          <></>
-        )}
-      </NavigationContainer>
-    </SafeAreaView>
+    <NavigationContainer>
+      {MENU_LIST.length > 0 ? (
+        <Stack.Navigator>
+          {MENU_LIST.map(menu => {
+            const {name, component, options} = menu;
+            return (
+              <Stack.Screen
+                key={name}
+                name={name}
+                component={component}
+                options={options}
+              />
+            );
+          })}
+        </Stack.Navigator>
+      ) : (
+        <></>
+      )}
+    </NavigationContainer>
   );
 }
 
